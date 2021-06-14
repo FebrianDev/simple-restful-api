@@ -1,0 +1,89 @@
+### Create Data
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "1",
+  "name": "Laptop 455X",
+  "price": "4.000.000",
+  "quantity": "1"
+}
+
+
+### Create Data Invalid
+
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+"id": "1",
+"name": "",
+"price": -1,
+"quantity": -1
+}
+
+
+### Get Data By Id
+GET http://localhost:3000/api/products/1
+Content-Type: application/json
+
+
+### Get Data By Id Not Found
+GET http://localhost:3000/api/products/notfound
+Content-Type: application/json
+
+
+### Update product
+PUT http://localhost:3000/api/products/4
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Apple Mac Book Pro 15 2020",
+  "price" : 40000000,
+  "quantity" : 100
+}
+
+### Update product not found
+
+PUT http://localhost:3000/api/products/NOTFOUND
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "Apple Mac Book Pro 15 2020",
+  "price" : 40000000,
+  "quantity" : 100
+}
+
+
+### Update product with invalid body
+
+PUT http://localhost:3000/api/products/4
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name" : "",
+  "price" : 0,
+  "quantity" : -10
+}
+
+
+### Delete product
+
+DELETE http://localhost:3000/api/products/3
+Accept: application/json
+
+### Delete product id not found
+
+DELETE http://localhost:3000/api/products/NOTFOUND
+Accept: application/json
+
+
+### List products
+
+GET http://localhost:3000/api/products
+Accept: application/json

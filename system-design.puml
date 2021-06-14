@@ -1,0 +1,16 @@
+@startuml
+
+actor "User" as user
+node "Expressjs RESTful API"{
+    component "Controller" as controller
+    component "Service" as service
+
+}
+
+database "MYSQL" as database
+
+user <-->controller
+controller <--> service
+service <--> database
+
+@enduml
